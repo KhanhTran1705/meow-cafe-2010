@@ -23,5 +23,6 @@ playButton.addEventListener("click", () => {
   playButton.style.opacity = 0.6;
 
   const text = "💖 Chúc em 20/10 🎀 thật hạnh phúc, ngập tràn những điều hạnh phúc 💕, luôn vui vẻ 🐱, xinh xắn 🌷, tươi tắn và luôn nở nụ cười xinh tươi trên môi đó nha 🌸😽💕";
-  typeWriterEffect(text, message, 70); // 70ms = tốc độ mỗi ký tự
+  typeWriterEffect(text, message, 70);
 });
+
