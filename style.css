@@ -1,0 +1,68 @@
+body {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Comic Sans MS", sans-serif;
+  margin: 0;
+}
+.card {
+  background: white;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 350px;
+  animation: fadeIn 1.5s ease-in;
+}
+.cat {
+  width: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+button {
+  background-color: #f78fb3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #f25f7a;
+}
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ff4081;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 15px;
+  }
+  button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+  }
+}
