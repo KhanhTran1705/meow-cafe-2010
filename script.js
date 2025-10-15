@@ -1,15 +1,27 @@
-function showMessage() {
-  const msg = [
-    "Hy vọng hôm nay em cười thật nhiều 😸",
-    "Anh chúc quán của em luôn đông khách ☕",
-    "Và chúc em mãi xinh đẹp, đáng yêu như bé mèo nè 💖"
-  ];
+const playButton = document.getElementById("playButton");
+const audio = document.getElementById("bgm");
+const message = document.getElementById("message");
+
+function typeWriterEffect(text, element, speed = 70) {
+  element.textContent = "";
   let i = 0;
-  const messageBox = document.getElementById("message");
-  messageBox.textContent = "";
-  const interval = setInterval(() => {
-    messageBox.textContent = msg[i];
-    i++;
-    if (i === msg.length) clearInterval(interval);
-  }, 2000);
+
+  function typing() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
 }
+
+playButton.addEventListener("click", () => {
+  audio.play();
+  playButton.disabled = true;
+  playButton.style.opacity = 0.6;
+
+  const text = "💖 Chúc em 20/10 🎀 thật hạnh phúc, ngập tràn những điều hạnh phúc 💕, luôn vui vẻ 🐱, xinh xắn 🌷, tươi tắn và luôn nở nụ cười xinh tươi trên môi đó nha 🌸😽💕";
+  typeWriterEffect(text, message, 70); // 70ms = tốc độ mỗi ký tự
+});
